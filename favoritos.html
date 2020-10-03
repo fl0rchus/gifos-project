@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="assets/logo-desktop-modo-noc.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/dd7c578e26.js" crossorigin="anonymous"></script>
     <script src="js/variable.js"></script>
 </head>
+
 <body>
     <header>
         <a href="index.html">
-            <img src="assets/logo-desktop.svg" alt="Gifos" class="logo"/>
+            <img src="assets/logo-desktop.svg" alt="Gifos" class="logo" />
         </a>
         <nav>
             <div class="menu">
@@ -30,73 +34,75 @@
                     <li id="plus"><a href="crear-gifo.html"><i class="fas fa-plus"></i></a></li>
                 </ul>
             </div>
-        </nav>    
-    </header>  
+        </nav>
+    </header>
     <main>
-        <div class="container">
-            <img src="assets/icon-favoritos.svg" alt="">
-            <h2>Favoritos</h2>
-        </div>
-        <section id="favoritos">
-            <div class="gallery">
-                <div class="gif-1">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-2">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-3">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-4">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-5">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-6">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-7">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-8">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-9">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-10">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-11">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
-                <div class="gif-12">
-                    <img src="https://placeimg.com/357/275/tech" alt="">
-                </div>
+        <section id="main-fav">
+            <div class="title-fav">
+                <img src="assets/icon-favoritos.svg" alt="Favoritos">
+                <h2>Favoritos</h2>
             </div>
-            <div class="btn">
-                <a href="#">VER MAS</a>
-            </div>
-        </section>
-        <section id="no-content">
-            <div class="container">
-                <img src="assets/icon-fav-sin-contenido.svg" alt="">
+            <section id="favoritos" style="display: block;">
+                <div id="gallery-fav">
+                    <div class="gif-1">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-2">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-3">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-4">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-5">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-6">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-7">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-8">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-9">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-10">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-11">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                    <div class="gif-12">
+                        <img src="https://placeimg.com/357/275/tech" alt="">
+                    </div>
+                </div>
+                <div class="btn" id="verMasBtnFav">
+                    <a href="#">VER MAS</a>
+                </div>
+            </section>
+            <section id="no-content" style="display: none;">
+                <div class="container">
+                    <img src="assets/icon-fav-sin-contenido.svg" alt="">
                     <p>"¡Guarda tu primer GIFO en Favoritos<br>para que se muestre aquí!"</p>
-            </div>
-        </section>
-        <section id="trending">
-            <div class="subtitle">
-                <h2>Trending GIFOS</h2>
-                <p>Mira los últimos GIFO de nuestra comunidad.</p>
-            </div>
-            <div id='slider-container'>
-                <div id="slider">
-                    <button id="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
-                    <button id="next"><i class="fas fa-chevron-right fa-2x"></i></button>
                 </div>
-    </section>
+            </section>
+            <section id="trending">
+                <div class="subtitle">
+                    <h2>Trending GIFOS</h2>
+                    <p>Mira los últimos GIFO de nuestra comunidad.</p>
+                </div>
+                <div id='slider-container'>
+                    <div id="slider">
+                        <button id="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                        <button id="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+                    </div>
+            </section>
+        </section>
     </main>
     <footer>
         <div class="share-container">
@@ -114,4 +120,5 @@
     <script src="js/fav.js"></script>
     <script src="js/trendings.js"></script>
 </body>
+
 </html>

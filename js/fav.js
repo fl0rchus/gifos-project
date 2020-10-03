@@ -1,6 +1,6 @@
 //Dark Mode
 const btnSwitch = document.querySelector('#switch');
-const logo = document.querySelector('#logo');
+const logo = document.querySelector('.logo');
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     logo.src = '../assets/logo-desktop-modo-noc.svg';

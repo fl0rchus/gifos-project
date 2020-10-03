@@ -141,8 +141,6 @@
 #gallery {
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(4, 1fr);
-  // display: flex;
-  // flex-wrap: wrap;
   grid-column-gap: 29px;
   grid-row-gap: 28px;
   width: 80%;

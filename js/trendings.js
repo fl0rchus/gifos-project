@@ -56,8 +56,8 @@ async function trendingGifs(){
         divInfo.classList.add('gif-info');
         divInfo.innerHTML = 
         `
-            <p>${data.data[i].title}</p>
             <p>${data.data[i].username}</p>
+            <p>${data.data[i].title}</p>
         `
         // console.log(data.data[i].id);
 
