@@ -1,0 +1,265 @@
+HOME -------------
+main {
+  margin-top: 90px;
+  width: 100%;
+}
+header {
+  border-top: 5px solid $violeta;
+  width: 100%;
+  position: fixed;
+  height: 90px;
+  top: 0;
+  padding: 10px 10%;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main-content .container {
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+}
+.title-container,
+.container-search,
+.trendings{
+  justify-self: center;
+  align-self: center;
+}
+//Titulo
+.title-container {
+  margin: 25px 0;
+  // width: 50%;
+  justify-self: center;
+  align-self: center;
+}
+.title-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  color: $violeta;
+
+  body.dark & {
+    color: #fff;
+  }
+}
+.title-container span {
+  color: $aquamarine;
+}
+//Search Box
+.search-bar {
+  height: 50px;
+  border: 1px solid $violeta;
+  border-radius: 27px;
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  body.dark & {
+    border: 1px solid #ffffff;
+  }
+}
+
+#search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  line-height: 40px;
+  width: 34.4375rem;
+}
+.container-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+//Imagen
+.illustration img {
+  border: none;
+  display: block;
+}
+//Trendings
+.trendings {
+  margin-top: 4.5625rem;
+  text-align: center;
+}
+.trendings h5 {
+  font-size: 1.125rem;
+  color: $violeta;
+  font-weight: 500;
+
+  body.dark & {
+    color: #ffffff;
+  }
+}
+.trendings ul li {
+  font-size: 1.125rem;
+  color: $violeta;
+  font-weight: 300;
+  opacity: 0.8;
+  text-transform: capitalize;
+  body.dark & {
+    color: #ffffff;
+  }
+  list-style: none;
+  display: inline-block;
+}
+//Search bar: inner card
+.inner-card {
+  width: 39.5625rem;
+  border: 1px solid $violeta;
+  border-top: none;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  body.dark & {
+    border: 1px solid #ffffff;
+  }
+}
+.suggestions {
+  margin: 1.375rem;
+  display: flex;
+  flex-direction: column;
+}
+.suggestions li {
+  color: $gris;
+  padding: 0.625rem;
+  list-style: none;
+}
+.inner-card hr {
+  width: 31.5625rem;
+  margin: auto;
+  border: 1px solid $gris;
+  margin-bottom: 0.625rem;
+  opacity: 0.5;
+}
+//Resultados de la busqueda
+.gallery {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  grid-column-gap: 29px;
+  grid-row-gap: 28px;
+  width: 90%;
+  margin: 0 auto;
+}
+.gallery div img {
+  width: 100%;
+  height: 100%;
+}
+#results {
+  width: 98%;
+  margin: 50px auto;
+}
+#results h2 {
+  font-family: $montserrat;
+  font-weight: bold;
+  font-size: 35px;
+  color: $violeta;
+  text-align: center;
+  line-height: 30px;
+  margin: 137px 0 60px 0;
+  body.dark & {
+    color: #ffffff;
+  }
+}
+#results hr {
+  width: 338px;
+  border: 1px solid $gris;
+  margin: auto;
+  opacity: 0.5;
+}
+//No resultados
+#no-results {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // height: 70vh;
+}
+#no-results h2 {
+  font-family: $montserrat;
+  font-weight: 700;
+  font-size: 30px;
+  color: $violeta;
+  text-align: center;
+  line-height: 30px;
+}
+#no-results p {
+  font-family: $montserrat;
+  font-weight: 700;
+  font-size: 22px;
+  color: #50e3c2;
+  text-align: center;
+  line-height: 25px;
+}
+#no-results div img {
+  margin: 109px 0 29px 0;
+}
+#no-results hr {
+  width: 338px;
+  border: 1px solid $gris;
+  margin: 80px auto;
+  opacity: 0.5;
+}
+//Barra de busqueda
+.search-bar {
+  height: 50px;
+  // border: 1px solid $violeta;
+  border-radius: 27px;
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  body.dark & {
+    border: 1px solid #ffffff;
+  }
+}
+#search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  line-height: 40px;
+  width: 16.875rem;
+}
+.container-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search{
+  height: fit-content;
+  width: 16.875rem;
+  border: 1px solid $violeta;
+  border-radius: 27px;
+}
+.inner-card hr {
+  width: 14.375rem;
+  margin: auto;
+  border: 1px solid $gris;
+  margin-bottom: 0.625rem;
+  opacity: 0.5;
+}
+.suggestions li {
+  color: $gris;
+  padding: 0.3125rem;
+  list-style: none;
+}
+.suggestions {
+  margin: 0.625rem;
+  display: flex;
+  flex-direction: column;
+}

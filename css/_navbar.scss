@@ -1,0 +1,241 @@
+header {
+  width: 100%;
+  position: fixed;
+  height: 95px;
+  background-color: #ffffff;
+  top: 0;
+  padding: 10px 6%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 5px solid $violeta;
+  z-index: 2;
+  body.dark &{
+      background-color: $grisOscuro !important;
+  }
+}
+header img {
+  float: left;
+}
+header nav {
+  float: right;
+}
+header nav .menu ul {
+  /*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
+  width: 100%;
+  position: absolute;
+  top: 94px;
+  right: 0;
+  overflow: hidden;
+  list-style: none;
+  background: rgba(87, 46, 229, 0.9);
+  height :0px;
+  text-align: center;
+  display: grid;
+  grid-template: repeat(3,1fr) / repeat(1,1fr);
+
+  body.dark &{
+    background: #000;
+  }
+}
+#plus {
+  display: none;
+}
+header nav .menu ul li {
+  position: relative;
+  align-self: center;
+  height: 50px;
+}
+header nav .menu ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  padding: 0;
+  line-height: 28px;
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  width: 100%;
+}
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 400px;
+}
+header nav .menu {
+  padding-top: 3px;
+}
+header nav .menu hr {
+  width: 41px;
+  border: 1px solid #fff;
+  text-align: center;
+  opacity: 0.5;
+  margin: 40px auto;
+}
+/*checkbox transparente y en primer plano*/
+header nav .menu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+/*span -lineas del menu hamburguesa-*/
+header nav .menu span {
+  display: block;
+  width: 25px;
+  height: 2.5px;
+  margin-bottom: 6.5px;
+  position: relative;
+  background: #572ee5;
+  z-index: 1;
+  transform-origin: 3px 0px;
+
+  body.dark &{
+    background: #ffffff;
+  }
+}
+header nav .menu span:first-child {
+  transform-origin: 0% 0%;
+}
+header nav .menu span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+/*movimiento a cruz*/
+header nav .menu input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(2px, 1px);
+}
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(1px, 0px);
+}
+header img{
+  width: 48px;
+  display: block;
+}
+/*menu simple con tamaño menor a 1000px*/
+@media screen and (min-width: 1200px) {
+  header nav .menu ul {
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    body.dark &{
+      background: $grisOscuro;
+    }
+  }
+  header nav .menu ul li {
+    padding: 5px 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #572ee5;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  header nav .menu ul li:hover {
+    background: unset;
+    
+  }
+  header nav .menu ul li a {
+    padding: unset;
+    line-height: unset;
+    color: #572ee5;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $montserrat;
+
+    body.dark &{
+        color:#ffffff;
+    }
+  }
+  header nav .menu ul li a:hover {
+    color: #572ee5;
+    border-bottom: 2px solid #5ed7c6;
+  }
+  header nav .menu input {
+    display: none;
+  }
+  header nav .menu span {
+    display: none;
+  }
+  header nav .menu hr {
+    display: none;
+  }
+  #plus {
+    display: block;
+    width: 54px;
+    height: 54px;
+    border: 1px solid #572EE5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0;
+    body.dark &{
+       border: 1px solid #fff;
+    }
+  }
+  #plus a:hover{border-bottom: none}
+  #plus:hover{
+      background-color: $violeta;
+      a{
+          color: #fff;
+      }
+  }
+  #plus:active{
+      background-color: $gris;
+      border: 1px solid $gris;
+  }
+  .active-plus{
+    background-color: $gris;
+    border: 1px solid $gris !important;
+        i{
+            color:#ffffff;
+        }
+  }
+}
+// SEARCH BAR
+.nav-search{
+  height: 50px;
+  // border: 1px solid $violeta;
+  border-radius: 27px;
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20.875rem;
+  border: 1px solid $violeta;
+  position: relative;
+  right: 190px;
+
+  body.dark &{
+    border: 1px solid #ffffff;
+  }
+}
+.nav-search i{
+  color: $violeta;
+  font-size: 20px;
+  cursor: pointer;
+
+  body.dark &{
+    color: #ffffff;
+  }
+}
+
+//SHADOW SCROLL
+.shadow{
+  box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
+}

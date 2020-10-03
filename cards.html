@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gif-buttons{
+            position: relative;
+            top: -260px;
+            left: 220px;
+            opacity: 0.7;
+        }
+        .gif-info{
+            position: relative;
+            top: -140px;
+            left: 20px;
+            color: white;
+        }
+        .gif-buttons button{
+            border-radius: 6px;
+            background: #ffffff;
+            height: 32px;
+            width: 32px;
+            border: none;
+        }
+        .gif-card{
+            flex: none;
+            scroll-snap-align: start;
+            padding-bottom: 5px;
+            position: relative;
+            margin-right: 1.875rem;
+            width: 22.3125rem;
+            height: 17.1875rem;
+        }
+        .gif{
+            width: 22.3125rem;
+            height: 17.1875rem;
+        }
+        .gif img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gif-card:hover {
+            background-color: #572ee5;
+            cursor: pointer;
+        }
+        .gif-card:hover .gif {
+            opacity: 50%;
+        }
+        .gif-card:hover .gif-buttons,
+        .gif-card:hover .gif-info{
+            opacity: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-card">
+        <div class="gif">
+            <img src="https://placeimg.com/357/275/any?t=1601586420763">
+        </div>
+        <div class="gif-buttons">
+            <button style="height: 33px;" id="buttonGifs">
+                <img src="assets/icon-fav-hover.svg" alt="" style="height: 15px;">
+            </button>
+            <button>
+                <img src="assets/icon-download.svg" alt="" style="height: 18px;">
+            </button>
+            <button>
+                <img src="assets/icon-max.svg" alt="" style="height: 16px;">
+            </button>
+        </div>
+        <div class="gif-info">
+            <p>Username</p>
+            <p>Name</p>
+        </div>
+    </div>
+</body>
+</html>
