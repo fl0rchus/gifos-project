@@ -27,9 +27,11 @@ async function trendingGifs(){
 
         const divGif = document.createElement('div');
         divGif.classList.add('gif');
+        divGif.setAttribute('id', `${data.data[i].id}-gif`)
 
         const img = document.createElement('img');
         img.src = result;
+        img.classList.add('gif-img');
 
         divGif.appendChild(img);
         divContainer.appendChild(divGif);
@@ -37,10 +39,12 @@ async function trendingGifs(){
         const divButtons = document.createElement('div');
         divButtons.classList.add('gif-buttons');
 
+        // onclick="addFav(${data.data[i].id})"
+
         divButtons.innerHTML = 
         `
-            <button style="height: 33px;position: relative;top: -1px;" class="buttonGifs fav" onclick="agregarFav('${data.data[i].id}')">
-                <img src="assets/icon-fav-hover.svg" alt="Favoritos" style="height: 15px;" class="gifButton-hover">
+            <button style="height: 33px;position: relative;top: -1px;" class="buttonGifs" onclick="favInfo('${data.data[i].url}', '${data.data[i].title}', '${data.data[i].username}', '${data.data[i].id}')" id="${data.data[i].id}-add">
+                <img src="assets/icon-fav-hover.svg" alt="Favoritos" style="height: 15px;" class="gifButton-hover heart" >
             </button>
             <button class="buttonGifs download">
                 <img src="assets/icon-download.svg" alt="Descargar" style="height: 18px;" class="gifButton-hover">
@@ -56,10 +60,10 @@ async function trendingGifs(){
         divInfo.classList.add('gif-info');
         divInfo.innerHTML = 
         `
-            <p>${data.data[i].username}</p>
-            <p>${data.data[i].title}</p>
+            <p class="gif-title">${data.data[i].username}</p>
+            <p class="gif-username">${data.data[i].title}</p>
         `
-        // console.log(data.data[i].id);
+        // console.log(data.data[i]);
 
         divContainer.appendChild(divInfo);
 

@@ -1071,4 +1071,8 @@ body.dark .btn:hover a {
 body.dark .btn:hover {
   background: #ffffff;
 }
+
+.fav-active {
+  content: url("../assets/icon-fav-active.svg") !important;
+}
 /*# sourceMappingURL=styles.css.map */
