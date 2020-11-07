@@ -2,6 +2,10 @@
 // const gif = document.getElementsByClassName('gif');
 
 var favList = [];
+if(localStorage.getItem('gifInfo' != null){
+  favList = JSON.parse(localStorage.getItem('gifInfo'));
+});
+
 
 function favInfo(url, title, username, id){
     
