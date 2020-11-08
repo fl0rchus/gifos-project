@@ -62,7 +62,8 @@ async function search() {
         results.style.display = 'none';
     }else{
         for (let i = 0; i < json.data.length; i++) {
-            showSearch(json.data[i]);
+            let data = json.data[i];
+            new GifElement(data.images.downsized.url, data.title, data.username, data.id);
         }
         noResults.style.display = 'none';
     };
@@ -73,55 +74,10 @@ async function search() {
     clearSearch();
 }
 
-
 //Muestra de la busqueda en el DOM
-function showSearch(json) {
 
-    let url = json.images.downsized.url;
-    
-    const divContainer = document.createElement('div');
-    divContainer.classList.add('divResult');
 
-    const divImg = document.createElement('div');
-    divImg.classList.add('gifImg');
 
-    const img = document.createElement('img');
-    img.src = url;
-
-    divImg.appendChild(img)
-    divContainer.appendChild(divImg);
-
-    const divButtons = document.createElement('div');
-    divButtons.classList.add('gifButtonsContainer');
-
-    divButtons.innerHTML = 
-        `
-            <button style="height: 33px;position: relative;top: -1px;" class="gifButton">
-                <img src="assets/icon-fav-hover.svg" alt="Favoritos" style="height: 15px;" class="gifButton-hover">
-            </button>
-            <button class="gifButton">
-                <img src="assets/icon-download.svg" alt="Descargar" style="height: 18px;" class="gifButton-hover">
-            </button>
-            <button class="gifButton" style="position: relative;top: -1px;">
-                <img src="assets/icon-max.svg" alt="Maximizar" style="height: 16px;" class="gifButton-hover">
-            </button>
-        `;
-
-      divContainer.appendChild(divButtons);
-
-      const info = document.createElement('div');
-      info.classList.add('infoGif');
-      info.innerHTML = 
-      `
-        <p>${json.title}</p>
-        <p>${json.username}</p>
-      `
-      
-      divContainer.appendChild(info);
-
-      gallery.appendChild(divContainer);
-
-}
 
 const innerCardSearch = document.getElementById("inner-search");
 const greyIcon = document.getElementById("search-icon-grey");
@@ -157,7 +113,7 @@ const suggestionsUl = document.getElementById("suggestions-ul");
 //Dibujar las sugerencias en el DOM
 function suggestions(data) {
   let sugerencia = data.data;
-  console.log(sugerencia);
+  //console.log(sugerencia);
 
   suggestionsUl.innerHTML = `
         <li><i class="fas fa-search"></i> ${sugerencia[0].name}</li>
@@ -212,7 +168,7 @@ function moreResultsGifs() {
     })
     .then(function (json) {
       for (let i = 0; i < json.data.length; i++) {
-        showSearch(json.data[i]);
+        new GifElement(json.data[i].images.downsized.url, json.data[i].title, json.data[i].username, json.data[i].id);
       }
     });
 }

@@ -40,11 +40,17 @@ async function trendingGifs(){
         divButtons.classList.add('gif-buttons');
 
         // onclick="addFav(${data.data[i].id})"
+        let datos = {
+            url: data.data[i].images.downsized.url,
+            title: data.data[i].title,
+            username: data.data[i].username,
+            id: data.data[i].id
+        }
 
         divButtons.innerHTML = 
         `
-            <button style="height: 33px;position: relative;top: -1px;" class="buttonGifs" onclick="favInfo('${data.data[i].url}', '${data.data[i].title}', '${data.data[i].username}', '${data.data[i].id}')" id="${data.data[i].id}-add">
-                <img src="assets/icon-fav-hover.svg" alt="Favoritos" style="height: 15px;" class="gifButton-hover heart" >
+            <button style="height: 33px;position: relative;top: -1px;" class="buttonGifs"  >
+                <img src="assets/icon-fav-hover.svg" alt="Favoritos" style="height: 15px;" class="gifButton-hover heart" id="${data.data[i].id}-favtrend">
             </button>
             <button class="buttonGifs download">
                 <img src="assets/icon-download.svg" alt="Descargar" style="height: 18px;" class="gifButton-hover">
@@ -68,6 +74,10 @@ async function trendingGifs(){
         divContainer.appendChild(divInfo);
 
         slider.appendChild(divContainer);
+
+        document.getElementById(`${data.data[i].id}-favtrend`).parentElement.addEventListener('click', e => {
+            agregarFav(datos);
+        });
     }
 }
 trendingGifs();
