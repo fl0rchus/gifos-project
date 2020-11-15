@@ -16,7 +16,6 @@ async function trendingGifs() {
   //Leer json
   let response = await fetch(urlTrendingGifs);
   let data = await response.json();
-  console.log(data);
   //Mostrar resultados
   for (let i = 0; i <= 15; i++) {
     let result = data.data[i].images.fixed_height.url;
