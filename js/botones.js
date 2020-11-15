@@ -193,7 +193,7 @@ async function maxGif(json) {
         .then((response) => {
           const link = document.createElement("a");
           link.href = window.URL.createObjectURL(new Blob([response]));
-          link.setAttribute("download", `${title}.gif`);
+          link.setAttribute("download", `${json.data.title}.gif`);
           document.body.appendChild(link);
           link.click();
           link.parentElement.removeChild(link);
