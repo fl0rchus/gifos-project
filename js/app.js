@@ -19,7 +19,6 @@ async function trendingStrings2() {
   //Leer json
   let response = await fetch(urlTrending);
   let data = await response.json();
-  console.log(data);
   //Mostrar resultados
   let container = document.getElementById("trending-strings");
   for (let i = 0; i < 5; i++) {

@@ -65,7 +65,7 @@ async function trendingGifs() {
             <p class="gif-title">${data.data[i].username}</p>
             <p class="gif-username">${data.data[i].title}</p>
         `;
-    // console.log(data.data[i]);
+    
 
     divContainer.appendChild(divInfo);
 
@@ -96,6 +96,8 @@ async function trendingGifs() {
       .addEventListener("click", (e) => {
         searchById(`${data.data[i].id}`);
       });
+
+      checkFavs(data.data[i].id);
   }
 }
 trendingGifs();
