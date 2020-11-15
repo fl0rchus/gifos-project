@@ -1,6 +1,10 @@
 // //Funcionalidad de btn Favoritos
 function agregarFav(datos) {
-  const heart = document.getElementById(`${datos.id}-fav`);
+  let heart;
+  if(document.getElementById(`${datos.id}-fav`)) heart = document.getElementById(`${datos.id}-fav`);
+  else if(document.getElementById(`${datos.id}-favtrend`)) heart = document.getElementById(`${datos.id}-favtrend`);
+  else heart = document.getElementById(`${datos.id}-favmax`)
+
   var favList = localStorage.getItem("gifsFavs");
 
   if (favList) {
@@ -9,7 +13,6 @@ function agregarFav(datos) {
     let flag = false;
     for (var i = 0; i < favList.length; i++) {
       if (favList[i].id == datos.id) {
-        console.log(favList);
         flag = true;
         break;
       }
@@ -18,13 +21,11 @@ function agregarFav(datos) {
     if (flag) {
       //Sacarlo del localstorage
       favList.splice(i, 1);
-      console.log(favList);
       localStorage.setItem("gifsFavs", JSON.stringify(favList));
       heart.classList.remove("fav-active");
     } else {
       //agregarlo al localstorage
       favList.push(datos);
-      console.log(false);
       localStorage.setItem("gifsFavs", JSON.stringify(favList));
       heart.classList.add("fav-active");
     }
@@ -122,8 +123,6 @@ async function searchById(id) {
   const json = await response.json();
 
   maxGif(json);
-
-  console.log(json);
 }
 
 async function maxGif(json) {
@@ -149,10 +148,10 @@ async function maxGif(json) {
     <img
       src="assets/icon-fav-hover.svg"
       alt="Favoritos"
-      class="gifButton-hover heart id="${json.data.id}-fav"
+      class="gifButton-hover heart" id="${json.data.id}-favmax"
     />
   </button>
-  <button class="max-buttonGifs download id="${json.data.id}-download">
+  <button class="max-buttonGifs download" id="${json.data.id}-downloadmax">
     <img
       src="assets/icon-download.svg"
       alt="Descargar"
@@ -175,12 +174,19 @@ async function maxGif(json) {
   modal.style.display = "block";
 
   document
-    .getElementById(`${json.data.id}-fav`)
+    .getElementById(`${json.data.id}-favmax`)
     .parentElement.addEventListener("click", (e) => {
-      agregarFav(this.datos);
+      const data = {
+        id: json.data.id,
+        title: json.data.title,
+        url: json.data.images.downsized.url,
+        username: json.data.username
+      }
+      
+      agregarFav(data);
     });
   document
-    .getElementById(`${json.data.id}-download`)
+    .getElementById(`${json.data.id}-downloadmax`)
     .addEventListener("click", (e) => {
       fetch(url)
         .then((res) => res.blob())
