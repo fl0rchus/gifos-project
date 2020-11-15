@@ -1,0 +1,120 @@
+.modal {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 5000;
+  overflow: hidden;
+  display: none;
+}
+
+.btn-close-max {
+  float: right;
+  margin-top: 66px;
+  margin-right: 278px;
+  cursor: pointer;
+}
+// .max-gif {
+//   position: fixed;
+//   top: 160px;
+//   left: 390px;
+//   width: 695px;
+// }
+.max-gif img {
+  width: 100%;
+}
+.btns-text {
+  display: flex;
+  justify-content: space-between;
+  // width: 695px;
+  // height: 385px;
+  // align-items: center;
+  // position: fixed;
+  // bottom: 400px;
+  // left: 390px;
+}
+.max-buttonGifs {
+  border: 1px solid #ced7e1;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  background-color: white;
+}
+.max-user {
+  font-size: 15px;
+  text-align: left;
+}
+.max-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+// .container {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+.max-image-text {
+  width: 90%;
+}
+.max-gif-info {
+  width: 70%;
+}
+//GRID
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . max-cross"
+    "max-gif max-gif max-gif max-gif"
+    "max-info max-info max-info max-info";
+}
+
+.max-gif {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0px 0px;
+  grid-template-areas:
+    ". max-gif-img ."
+    ". max-gif-img .";
+  grid-area: max-gif;
+}
+
+.max-gif-img {
+  grid-area: max-gif-img;
+}
+
+.max-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0px 0px;
+  grid-template-areas:
+    "max-info-p . max-info-btns"
+    ". . .";
+  grid-area: max-info;
+  margin-top: 25px;
+}
+
+.max-info-p {
+  grid-area: max-info-p;
+  padding-left: 50%;
+}
+
+.max-info-btns {
+  grid-area: max-info-btns;
+}
+.max-info-btns button:nth-child(2) {
+  margin-left: 20px;
+}
+
+.max-cross {
+  grid-area: max-cross;
+}

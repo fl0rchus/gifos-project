@@ -1,79 +1,79 @@
-$violeta: #572EE5;
-$gris: #9CAFC3;
-$montserrat: 'Montserrat', sans-serif;
-$aquamarine: #50E3C2;
-$grisOscuro: #37383C;
-$grisMasOscuro: #222326;;
+$violeta: #572ee5;
+$gris: #9cafc3;
+$montserrat: "Montserrat", sans-serif;
+$aquamarine: #50e3c2;
+$grisOscuro: #37383c;
+$grisMasOscuro: #222326;
 
 // @import 'footer';
-@import 'trending';
-@import 'home';
-@import 'navbar';
-@import 'favoritos';
-@import 'mis-gifos';
-@import 'crear-gifo';
-@import 'mediaqueries';
-@import 'footer';
+@import "trending";
+@import "home";
+@import "navbar";
+@import "favoritos";
+@import "mis-gifos";
+@import "crear-gifo";
+@import "mediaqueries";
+@import "footer";
+@import "modal";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+  transition: 0.3s ease all;
+  &.dark {
+    background: $grisOscuro;
+    color: #ffffff;
+  }
+}
+main {
+  margin-top: 95px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 127px;
+  height: 50px;
+  border: 1px solid $violeta;
+  border-radius: 25px;
+  margin: 80px auto;
+
+  body.dark & {
+    border: 1px solid #ffffff;
+  }
+}
+.btn a {
+  text-decoration: none;
+  color: $violeta;
+  font-family: $montserrat;
+  font-size: 13px;
+  font-weight: 700;
+
+  body.dark & {
+    color: #ffffff;
+  }
+}
+.btn:hover {
+  background: $violeta;
+  a {
+    color: #ffffff;
+    body.dark & {
+      color: $grisOscuro;
+    }
+  }
+
+  body.dark & {
     background: #ffffff;
-    transition: .3s ease all;
-    &.dark{
-        background: $grisOscuro;
-        color: #FFFFFF;
-    }
+  }
 }
-main{
-    margin-top: 95px;
-}
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 127px;
-    height: 50px;
-    border: 1px solid $violeta;
-    border-radius: 25px;
-    margin: 80px auto;
-
-    body.dark &{
-        border: 1px solid #ffffff;
-    }
-}
-.btn a{
-    text-decoration: none;
-    color: $violeta;
-    font-family: $montserrat;
-    font-size: 13px;
-    font-weight: 700;
-    
-    body.dark &{
-        color: #ffffff;
-    }
-}
-.btn:hover{
-    background: $violeta;
-    a{
-        color: #ffffff;
-        body.dark &{
-            color: $grisOscuro;
-        }
-    }
-
-    body.dark &{
-        background: #ffffff;
-    }
-}
-
 
 //Icons
-.fav-active{
-    content: url('../assets/icon-fav-active.svg') !important;
+.fav-active {
+  content: url("../assets/icon-fav-active.svg") !important;
 }
