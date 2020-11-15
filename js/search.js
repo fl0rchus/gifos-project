@@ -64,11 +64,10 @@ async function search() {
         for (let i = 0; i < json.data.length; i++) {
             let data = json.data[i];
             new GifElement(data.images.downsized.url, data.title, data.username, data.id);
+            checkFavs(data.id);
         }
         noResults.style.display = 'none';
     };
-    
-    console.log(json.data)
 
     desactiveSearchBar();
     clearSearch();
@@ -169,6 +168,7 @@ function moreResultsGifs() {
     .then(function (json) {
       for (let i = 0; i < json.data.length; i++) {
         new GifElement(json.data[i].images.downsized.url, json.data[i].title, json.data[i].username, json.data[i].id);
+        checkFavs(json.data[i].id);
       }
     });
 }

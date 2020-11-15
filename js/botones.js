@@ -1,9 +1,10 @@
 // //Funcionalidad de btn Favoritos
 function agregarFav(datos) {
   let heart;
-  if(document.getElementById(`${datos.id}-fav`)) heart = document.getElementById(`${datos.id}-fav`);
+  
+  if(document.getElementById(`${datos.id}-favmax`)) heart = document.getElementById(`${datos.id}-favmax`);
   else if(document.getElementById(`${datos.id}-favtrend`)) heart = document.getElementById(`${datos.id}-favtrend`);
-  else heart = document.getElementById(`${datos.id}-favmax`)
+  else heart = document.getElementById(`${datos.id}-fav`);
 
   var favList = localStorage.getItem("gifsFavs");
 
@@ -123,6 +124,7 @@ async function searchById(id) {
   const json = await response.json();
 
   maxGif(json);
+  checkFavs(json.data.id);
 }
 
 async function maxGif(json) {
