@@ -1,183 +1,181 @@
 //Trending section and Title
-#trending{
-    height: 40rem;
-    background-color: #F3F5F8;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#trending {
+  height: 40rem;
+  background-color: #f3f5f8;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    body.dark &{
-        background-color: $grisMasOscuro;
-    }
+  body.dark & {
+    background-color: $grisMasOscuro;
+  }
 }
-.subtitle{
-    margin-bottom: 7em;
-    text-align: center;
+.subtitle {
+  margin-bottom: 7em;
+  text-align: center;
 }
-.subtitle h2{
-    font-family: $montserrat;
-    font-size: 25px;
-    color: $violeta;
-    line-height: 30px;
+.subtitle h2 {
+  font-family: $montserrat;
+  font-size: 25px;
+  color: $violeta;
+  line-height: 30px;
 
-    body.dark &{
-        color: #fff;
-    }
+  body.dark & {
+    color: #fff;
+  }
 }
-.subtitle p{
-    font-size: 18px;
+.subtitle p {
+  font-size: 18px;
 }
 //Slider
 #slider-container {
-    position: relative;
+  position: relative;
 }
 
 #slider {
-    display: flex;
-    width: 66.75rem;
-    overflow-x: hidden;
-	scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+  display: flex;
+  width: 66.75rem;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .img-slider {
-    flex: none;
-    scroll-snap-align: start;
-    padding-bottom: 5px;
-    position: relative;
-    margin-right: 1.875rem;
-    width: 22.3125rem;
-    height: 17.1875rem;
-} 
+  flex: none;
+  scroll-snap-align: start;
+  padding-bottom: 5px;
+  position: relative;
+  margin-right: 1.875rem;
+  width: 22.3125rem;
+  height: 17.1875rem;
+}
 
 .img-slider img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #prev,
 #next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 1px solid $violeta;
-    background: transparent;
-    color: $violeta;
-    cursor: pointer;
-    padding: 10px 15px;
-    outline: none;
-    opacity: 1;
-    body.dark &{
-        color: #fff;
-        border: 1px solid #fff;
-    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid $violeta;
+  background: transparent;
+  color: $violeta;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: none;
+  opacity: 1;
+  body.dark & {
+    color: #fff;
+    border: 1px solid #fff;
+  }
 }
 
 #prev {
-    left: -80px;
+  left: -80px;
 }
 
 #next {
-    right: -80px;
+  right: -80px;
 }
 
 #slider-container:hover button {
-    opacity: 1;
+  opacity: 1;
 }
 #prev:hover,
 #next:hover {
-    background-color: $violeta;
-    i{
-       color: #fff;
-    }
+  background-color: $violeta;
+  i {
+    color: #fff;
+  }
 
-    body.dark &{
-        background-color: #fff;
+  body.dark & {
+    background-color: #fff;
 
-        i{
-            color: $grisMasOscuro;
-        }
+    i {
+      color: $grisMasOscuro;
     }
+  }
 }
 
 //Cards y efecto hover
-.gif-buttons{
-    position: relative;
-    top: -260px;
-    left: 220px;
-    opacity: 0;
+.gif-buttons {
+  position: relative;
+  top: -260px;
+  left: 220px;
+  opacity: 0;
 }
-.gif-info{
-    position: relative;
-    top: -110px;
-    left: 15px;
-    color: #ffffff;
-    opacity: 0;
+.gif-info {
+  position: relative;
+  top: -110px;
+  left: 10px;
+  color: #ffffff;
+  opacity: 0;
+  width: 70%;
 }
-.gif-info p:nth-child(1){
-    font-size: 15px;
-    text-transform: capitalize;
+.gif-info p:nth-child(1) {
+  font-size: 15px;
+  text-transform: capitalize;
 }
-.gif-info p:nth-child(2){
-    font-weight: bold;
-    font-size: 16px;
+.gif-info p:nth-child(2) {
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.buttonGifs{
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.5);
-    height: 32px;
-    width: 32px;
-    border: none;
+.buttonGifs {
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  height: 32px;
+  width: 32px;
+  border: none;
 }
 
 .gif-card:hover {
-    background-color: #572ee5;
-    cursor: pointer;
-    
-    .gif-info,
-    .gif-buttons{
-        opacity: 100%;
+  background-color: #572ee5;
+  cursor: pointer;
+
+  .gif-info,
+  .gif-buttons {
+    opacity: 100%;
+  }
+  .gif {
+    opacity: 50%;
+  }
+  button:hover {
+    background: rgba(255, 255, 255, 1);
+    .gifButton-hover {
+      opacity: 100%;
     }
-    .gif {
-        opacity: 50%;
-    }
-    button:hover{
-        background: rgba(255, 255, 255, 1);
-        .gifButton-hover{
-            opacity: 100%;
-        }
-    }
+  }
 }
 
-
-
-.gif-card:hover 
-.buttonGifs:hover{
-    opacity: 1;
+.gif-card:hover .buttonGifs:hover {
+  opacity: 1;
 }
 
-.gif-card{
-    flex: none;
-    scroll-snap-align: start;
-    padding-bottom: 5px;
-    position: relative;
-    margin-right: 1.875rem;
-    width: 22.3125rem;
-    height: 17.1875rem;
+.gif-card {
+  flex: none;
+  scroll-snap-align: start;
+  padding-bottom: 5px;
+  position: relative;
+  margin-right: 1.875rem;
+  width: 22.3125rem;
+  height: 17.1875rem;
 }
-.gif{
-    width: 22.3125rem;
-    height: 17.1875rem;
+.gif {
+  width: 22.3125rem;
+  height: 17.1875rem;
 }
-.gif img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.gif img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

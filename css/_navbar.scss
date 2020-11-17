@@ -11,8 +11,8 @@ header {
   align-items: center;
   border-top: 5px solid $violeta;
   z-index: 2;
-  body.dark &{
-      background-color: $grisOscuro !important;
+  body.dark & {
+    background-color: $grisOscuro !important;
   }
 }
 header img {
@@ -30,12 +30,12 @@ header nav .menu ul {
   overflow: hidden;
   list-style: none;
   background: rgba(87, 46, 229, 0.9);
-  height :0px;
+  height: 0px;
   text-align: center;
   display: grid;
-  grid-template: repeat(3,1fr) / repeat(1,1fr);
+  grid-template: repeat(3, 1fr) / repeat(1, 1fr);
 
-  body.dark &{
+  body.dark & {
     background: #000;
   }
 }
@@ -91,7 +91,7 @@ header nav .menu span {
   z-index: 1;
   transform-origin: 3px 0px;
 
-  body.dark &{
+  body.dark & {
     background: #ffffff;
   }
 }
@@ -113,7 +113,7 @@ header nav .menu input:checked ~ span:nth-last-child(3) {
 header nav .menu input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(1px, 0px);
 }
-header img{
+header img {
   width: 48px;
   display: block;
 }
@@ -122,7 +122,7 @@ header img{
   header nav .menu ul {
     position: relative;
     top: 0;
-    right: 0;
+    right: 1.875rem;
     overflow: hidden;
     background: unset;
     height: unset;
@@ -131,12 +131,12 @@ header img{
     justify-content: center;
     align-items: center;
 
-    body.dark &{
+    body.dark & {
       background: $grisOscuro;
     }
   }
   header nav .menu ul li {
-    padding: 5px 40px;
+    padding: 0.3125rem 2rem;
     display: inline-block;
     text-transform: uppercase;
     color: #572ee5;
@@ -146,7 +146,6 @@ header img{
   }
   header nav .menu ul li:hover {
     background: unset;
-    
   }
   header nav .menu ul li a {
     padding: unset;
@@ -156,8 +155,8 @@ header img{
     text-transform: uppercase;
     font-family: $montserrat;
 
-    body.dark &{
-        color:#ffffff;
+    body.dark & {
+      color: #ffffff;
     }
   }
   header nav .menu ul li a:hover {
@@ -175,41 +174,43 @@ header img{
   }
   #plus {
     display: block;
-    width: 54px;
-    height: 54px;
-    border: 1px solid #572EE5;
+    width: 3.375rem;
+    height: 3.375rem;
+    border: 1px solid #572ee5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     padding: 0;
-    body.dark &{
-       border: 1px solid #fff;
+    body.dark & {
+      border: 1px solid #fff;
     }
   }
-  #plus a:hover{border-bottom: none}
-  #plus:hover{
-      background-color: $violeta;
-      a{
-          color: #fff;
-      }
+  #plus a:hover {
+    border-bottom: none;
   }
-  #plus:active{
-      background-color: $gris;
-      border: 1px solid $gris;
+  #plus:hover {
+    background-color: $violeta;
+    a {
+      color: #fff;
+    }
   }
-  .active-plus{
+  #plus:active {
+    background-color: $gris;
+    border: 1px solid $gris;
+  }
+  .active-plus {
     background-color: $gris;
     border: 1px solid $gris !important;
-        i{
-            color:#ffffff;
-        }
+    i {
+      color: #ffffff;
+    }
   }
 }
 // SEARCH BAR
-.nav-search{
-  height: 50px;
+.nav-search {
+  height: 3.125rem;
   // border: 1px solid $violeta;
   border-radius: 27px;
   padding: 0.625rem 1.25rem;
@@ -221,21 +222,21 @@ header img{
   position: relative;
   right: 190px;
 
-  body.dark &{
+  body.dark & {
     border: 1px solid #ffffff;
   }
 }
-.nav-search i{
+.nav-search i {
   color: $violeta;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
 
-  body.dark &{
+  body.dark & {
     color: #ffffff;
   }
 }
 
 //SHADOW SCROLL
-.shadow{
-  box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
+.shadow {
+  box-shadow: 0 2px 4px 1px rgba(156, 175, 195, 0.55);
 }
