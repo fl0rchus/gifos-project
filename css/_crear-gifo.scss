@@ -107,6 +107,9 @@
   span {
     color: $aquamarine;
   }
+  body.dark & {
+    color: #ffffff;
+  }
 }
 .viv-container__text {
   text-align: center;
@@ -117,7 +120,7 @@
 .step-1,
 .step-2,
 .step-3 {
-  border: 1px solid #572ee5;
+  border: 1px solid $violeta;
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -129,6 +132,12 @@
     color: $violeta;
     font-size: 18px;
     font-weight: 500;
+  }
+  body.dark & {
+    border: 1px solid white;
+    p {
+      color: white;
+    }
   }
 }
 .steps-container {
@@ -145,6 +154,9 @@
   font-weight: bold;
   border-bottom: 2px solid $aquamarine;
   cursor: pointer;
+  body.dark & {
+    color: #ffffff;
+  }
 }
 .timer {
   font-size: 13px;
@@ -161,6 +173,9 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  body.dark & {
+    background: black;
+  }
 }
 .btn-create {
   display: flex;
@@ -198,5 +213,15 @@
 
   body.dark & {
     background: #ffffff;
+  }
+}
+.cam-svg-1 {
+  body.dark & {
+    content: url("../assets/camara-modo-noc.svg");
+  }
+}
+.cam-svg-2 {
+  body.dark & {
+    content: url("../assets/pelicula-modo-noc.svg");
   }
 }
