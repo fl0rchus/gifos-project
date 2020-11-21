@@ -96,6 +96,8 @@
 .vid-container {
   grid-area: vid-container;
   justify-content: center;
+  // width: 480px;
+  // height: 320px;
 }
 .vid-container__title {
   color: $violeta;
@@ -148,7 +150,7 @@
   right: 30%;
 }
 .repeat {
-  font-size: 13px;
+  font-size: 15px;
   font-family: $montserrat;
   color: $violeta;
   font-weight: bold;
@@ -159,10 +161,13 @@
   }
 }
 .timer {
-  font-size: 13px;
+  font-size: 15px;
   font-family: $montserrat;
   color: $violeta;
   font-weight: bold;
+  body.dark & {
+    color: #ffffff;
+  }
 }
 //Line and btn
 .line {
@@ -224,4 +229,36 @@
   body.dark & {
     content: url("../assets/pelicula-modo-noc.svg");
   }
+}
+
+//Card video
+//div video - useless?
+.video {
+  background-color: $violeta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  video {
+    opacity: 50%;
+  }
+}
+.p-loader,
+.p-upload {
+  color: #ffffff;
+  text-align: center;
+  font-family: $montserrat;
+  font-weight: bold;
+}
+.loading,
+.uploaded {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 50px;
+  z-index: 500;
 }
