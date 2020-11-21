@@ -55,15 +55,24 @@
           <div class="square-3"></div>
           <div class="square-4"></div>
           <div class="vid-container">
-            <p class="vid-container__title">
+            <p class="vid-container__title" id="container-title">
               Aquí podrás<br />crear tus propios <span>GIFOS</span>
             </p>
-            <p class="viv-container__text">
+            <p class="viv-container__text" id="container-paragraph">
               ¡Crea tu GIFO en sólo 3 pasos!
               <br />
               (sólo necesitas una cámara para grabar un video)
             </p>
-            <video></video>
+            <div class="loading" id="loading" style="display: none;">
+                <img src="assets/loader.svg" alt="Loading" />
+                <p class="p-loader">Estamos subiendo tu GIFO</p>
+            </div>
+            <div class="uploaded" id="uploaded" style="display: none;">
+                <img src="assets/check.svg" alt="Check" />
+                <p class="p-upload">GIFO subido con éxito</p>
+            </div>
+            <video id="ventana-video" style="height: 100%; width: 100%;"></video>
+            <img id="ventana-gif" style="display: none; height: 100%; width: 100%;">
           </div>
         </div>
         <div class="camera-2">
@@ -71,25 +80,34 @@
         </div>
         <div class="steps">
           <div class="steps-container">
-            <div class="step-1">
+            <div class="step-1" id="step-1">
               <p>1</p>
             </div>
-            <div class="step-2">
+            <div class="step-2" id="step-2">
               <p>2</p>
             </div>
-            <div class="step-3">
+            <div class="step-3" id="step-3">
               <p>3</p>
             </div>
           </div>
           <div class="p-container">
-            <p class="repeat">REPETIR CAPTURA</p>
-            <p class="timer"></p>
+            <p class="repeat" id="repetir-captura" style="display: none;">REPETIR CAPTURA</p>
+            <p class="timer" id="timer"></p>
           </div>
         </div>
         <div class="line-btns">
           <div class="line"></div>
           <div class="btn-create" id="btn-create">
             <a href="#">COMENZAR</a>
+          </div>
+          <div class="btn-create" id="btn-grabar" style="display: none;">
+            <a href="#">GRABAR</a>
+          </div>
+          <div class="btn-create" id="btn-stop" style="display: none;">
+            <a href="#">FINALIZAR</a>
+          </div>
+          <div class="btn-create" id="btn-subir" style="display: none;">
+            <a href="#">SUBIR GIFO</a>
           </div>
         </div>
       </section>
@@ -113,6 +131,8 @@
         <p>&copy; GIFOS 2020. All rights reserved.</p>
       </div>
     </footer>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="js/crear-gifo.js"></script>
+    <script src="js/variable.js"></script>
   </body>
 </html>
