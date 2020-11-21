@@ -1,0 +1,202 @@
+#create-gifo-main {
+  margin-top: 150px;
+}
+
+//GRID
+.grid-container-create {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 60% 15% 15%;
+  gap: 0px 0px;
+  grid-template-areas:
+    "camera-1 vid ..."
+    "... steps camera-2"
+    "... line-btns ...";
+  height: 81vh;
+  width: 70vw;
+  margin: 0 auto;
+}
+.camera-1 {
+  grid-area: camera-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vid {
+  grid-area: vid;
+  border: 1px solid #572ee5;
+  padding: 20px;
+  width: 688px;
+  height: 390px;
+  //grid
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 40% 40% 10%;
+  gap: 0px 0px;
+  grid-template-areas:
+    "square-1 ... square-2"
+    "... vid-container ..."
+    "... vid-container ..."
+    "square-3 ... square-4";
+  margin: 0 auto;
+}
+.camera-2 {
+  grid-area: camera-2;
+  align-self: end;
+}
+.steps {
+  grid-area: steps;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-flow: row;
+  align-items: center;
+}
+.line-btns {
+  grid-area: line-btns;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+//Vid container
+.square-1 {
+  border-top: 1px solid $aquamarine;
+  border-left: 1px solid $aquamarine;
+  width: 27px;
+  height: 25px;
+  grid-area: square-1;
+}
+.square-2 {
+  border-top: 1px solid $aquamarine;
+  border-right: 1px solid $aquamarine;
+  width: 27px;
+  height: 25px;
+  grid-area: square-2;
+  align-self: center;
+  margin-left: 50%;
+}
+.square-3 {
+  border-bottom: 1px solid $aquamarine;
+  border-left: 1px solid $aquamarine;
+  width: 27px;
+  height: 25px;
+  grid-area: square-3;
+  align-self: end;
+}
+.square-4 {
+  border-bottom: 1px solid $aquamarine;
+  border-right: 1px solid $aquamarine;
+  width: 27px;
+  height: 25px;
+  grid-area: square-4;
+  margin-left: 50%;
+}
+.vid-container {
+  grid-area: vid-container;
+  justify-content: center;
+}
+.vid-container__title {
+  color: $violeta;
+  font-family: $montserrat;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 5px;
+  span {
+    color: $aquamarine;
+  }
+}
+.viv-container__text {
+  text-align: center;
+  line-height: 29px;
+}
+
+//Steps
+.step-1,
+.step-2,
+.step-3 {
+  border: 1px solid #572ee5;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  p {
+    color: $violeta;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+.steps-container {
+  display: flex;
+}
+.p-container {
+  position: absolute;
+  right: 30%;
+}
+.repeat {
+  font-size: 13px;
+  font-family: $montserrat;
+  color: $violeta;
+  font-weight: bold;
+  border-bottom: 2px solid $aquamarine;
+  cursor: pointer;
+}
+.timer {
+  font-size: 13px;
+  font-family: $montserrat;
+  color: $violeta;
+  font-weight: bold;
+}
+//Line and btn
+.line {
+  width: 795px;
+  height: 7px;
+  background: $violeta;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.btn-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 127px;
+  height: 50px;
+  border: 1px solid $violeta;
+  border-radius: 25px;
+  margin: 20px auto;
+
+  body.dark & {
+    border: 1px solid #ffffff;
+  }
+}
+.btn-create a {
+  text-decoration: none;
+  color: $violeta;
+  font-family: $montserrat;
+  font-size: 13px;
+  font-weight: 700;
+
+  body.dark & {
+    color: #ffffff;
+  }
+}
+.btn-create:hover {
+  background: $violeta;
+  a {
+    color: #ffffff;
+    body.dark & {
+      color: $grisOscuro;
+    }
+  }
+
+  body.dark & {
+    background: #ffffff;
+  }
+}

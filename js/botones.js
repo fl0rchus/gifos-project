@@ -1,9 +1,11 @@
 // //Funcionalidad de btn Favoritos
 function agregarFav(datos) {
   let heart;
-  
-  if(document.getElementById(`${datos.id}-favmax`)) heart = document.getElementById(`${datos.id}-favmax`);
-  else if(document.getElementById(`${datos.id}-favtrend`)) heart = document.getElementById(`${datos.id}-favtrend`);
+
+  if (document.getElementById(`${datos.id}-favmax`))
+    heart = document.getElementById(`${datos.id}-favmax`);
+  else if (document.getElementById(`${datos.id}-favtrend`))
+    heart = document.getElementById(`${datos.id}-favtrend`);
   else heart = document.getElementById(`${datos.id}-fav`);
 
   var favList = localStorage.getItem("gifsFavs");
@@ -55,6 +57,7 @@ class GifElement {
   crearElemento(url, title, username, id) {
     const divContainer = document.createElement("div");
     divContainer.classList.add("divResult");
+    divContainer.setAttribute("id", `${id}-gif`);
 
     const divImg = document.createElement("div");
     divImg.classList.add("gifImg");
@@ -113,6 +116,13 @@ class GifElement {
     document.getElementById(`${id}-max`).addEventListener("click", (e) => {
       searchById(id);
     });
+
+    const gifCard = document.getElementById(`${id}-gif`);
+    gifCard.addEventListener("click", function () {
+      if (isMobile()) {
+        searchById(id);
+      }
+    });
   }
 }
 //Funcionalidad del boton maximizar
@@ -146,7 +156,7 @@ async function maxGif(json) {
       <p class="max-title">${json.data.title}</p>
     </div>
     <div class="max-info-btns">
-    <button class="max-buttonGifs">
+    <button class="max-buttonGifs" style="position: relative;top: -1px;">
     <img
       src="assets/icon-fav-hover.svg"
       alt="Favoritos"
@@ -182,9 +192,9 @@ async function maxGif(json) {
         id: json.data.id,
         title: json.data.title,
         url: json.data.images.downsized.url,
-        username: json.data.username
-      }
-      
+        username: json.data.username,
+      };
+
       agregarFav(data);
     });
   document
@@ -205,4 +215,16 @@ async function maxGif(json) {
 
 function closeModal() {
   modal.style.display = "none";
+}
+
+//Mobile detector
+function isMobile() {
+  return (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/BlackBerry/i)
+  );
 }

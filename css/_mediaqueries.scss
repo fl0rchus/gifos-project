@@ -71,6 +71,19 @@
   header nav .menu ul {
     top: 90px;
   }
+  //MODAL
+  .max-gif-img {
+    width: 20rem !important;
+  }
+  .btn-close-max {
+    margin-right: 50px !important;
+  }
+  .max-info-p {
+    padding-left: 10% !important;
+  }
+  .max-info-btns {
+    margin-right: 15% !important;
+  }
 }
 
 @media all and (min-width: 667px) and (max-width: 768px) {
@@ -150,6 +163,19 @@
   .trendings {
     width: 70%;
   }
+  //MODAL
+  .max-gif-img {
+    width: 20rem !important;
+  }
+  .btn-close-max {
+    margin-right: 50px !important;
+  }
+  .max-info-p {
+    padding-left: 10% !important;
+  }
+  .max-info-btns {
+    margin-right: 15% !important;
+  }
 }
 
 @media all and (min-width: 667px) and (max-width: 768px) {
@@ -227,6 +253,19 @@
   .trendings {
     width: 70%;
   }
+  //MODAL
+  .max-gif-img {
+    width: 25rem !important;
+  }
+  .btn-close-max {
+    margin-right: 50px !important;
+  }
+  .max-info-p {
+    padding-left: 10% !important;
+  }
+  .max-info-btns {
+    margin-right: 15% !important;
+  }
 }
 
 @media all and (min-width: 667px) and (max-width: 768px) {
@@ -260,6 +299,19 @@
   .trendings {
     width: 25em;
   }
+  //MODAL
+  .max-gif-img {
+    width: 25rem !important;
+  }
+  .btn-close-max {
+    margin-right: 50px !important;
+  }
+  .max-info-p {
+    padding-left: 10% !important;
+  }
+  .max-info-btns {
+    margin-right: 15% !important;
+  }
 }
 
 @media all and (min-width: 769px) and (max-width: 959px) {
@@ -277,6 +329,19 @@
   #gallery {
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     overflow: hidden;
+  }
+  //MODAL
+  .max-gif-img {
+    width: 30rem !important;
+  }
+  .btn-close-max {
+    margin-right: 50px !important;
+  }
+  .max-info-p {
+    padding-left: 10% !important;
+  }
+  .max-info-btns {
+    margin-right: 15% !important;
   }
 }
 @media all and (min-width: 960px) and (max-width: 1150px) {
@@ -299,13 +364,4 @@
   #gallery {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   }
-}
-//si la pantalla minima es de 1200px aplica los estilos de 1200 en adelante
-// @media all and (max-width: 1200px) {
-//   .nav-search {
-//     right: 0;
-//   }
-// }
-
-@media (max-width: 667px) {
 }
