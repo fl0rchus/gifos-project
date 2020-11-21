@@ -22,10 +22,11 @@ async function trendingGifs() {
 
     const divContainer = document.createElement("div");
     divContainer.classList.add("gif-card");
+    divContainer.setAttribute("id", `${data.data[i].id}-gif`);
 
     const divGif = document.createElement("div");
     divGif.classList.add("gif");
-    divGif.setAttribute("id", `${data.data[i].id}-gif`);
+    // divGif.setAttribute("id", `${data.data[i].id}-gif`);
 
     const img = document.createElement("img");
     img.src = result;
@@ -65,7 +66,6 @@ async function trendingGifs() {
             <p class="gif-title">${data.data[i].username}</p>
             <p class="gif-username">${data.data[i].title}</p>
         `;
-    
 
     divContainer.appendChild(divInfo);
 
@@ -97,7 +97,15 @@ async function trendingGifs() {
         searchById(`${data.data[i].id}`);
       });
 
-      checkFavs(data.data[i].id);
+    checkFavs(data.data[i].id);
+
+    const gifCard = document.getElementById(`${data.data[i].id}-gif`);
+
+    gifCard.addEventListener("click", function () {
+      if (isMobile()) {
+        searchById(data.data[i].id);
+      }
+    });
   }
 }
 trendingGifs();
