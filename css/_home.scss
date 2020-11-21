@@ -39,16 +39,11 @@
 /*BARRA DE BUSQUEDA*/
 .search-bar {
   height: 50px;
-  // border: 1px solid $violeta;
   border-radius: 27px;
   padding: 0.625rem 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  body.dark & {
-    border: 1px solid #ffffff;
-  }
 }
 #search-input,
 #search-input-nav {
