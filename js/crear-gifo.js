@@ -53,6 +53,7 @@ window.onload = () => {
             videoStream = stream;
             title.style.display = "none";
             paragraph.style.display = " none";
+            document.querySelector(".video").style.display = "flex";
             ventanaVideo.srcObject = stream;
             ventanaVideo.play();
 
@@ -66,8 +67,8 @@ window.onload = () => {
         recorder = new GifRecorder(videoStream, {
             frameRate: 1,
             quality: 10,
-            width: 360,
-            hidden: 240,
+            width: 480,
+            hidden: 320,
             onGifRecordingStarted: () => {
                 step2.style.backgroundColor = "#572ee5";
                 step2n.style.color = "#fff";
@@ -103,7 +104,12 @@ window.onload = () => {
     });
 
     document.getElementById("btn-subir").addEventListener("click", e => {
-        document.getElementById("loading").style.display = "block";
+        document.getElementById("btn-subir").style.display = "none";
+        document.getElementById("loading").style.display = "flex";
+        ventanaGif.classList.add("salame");
+        //ventanaGif.style.position = "relative";
+        //ventanaGif.style.top = "-20px";
+        document.querySelector(".video").style.backgroundColor = "#572ee5";
         let form = new FormData();
         form.append('file', gifCreado, 'myGif.gif');
         form.append('api_key', apiKey);
@@ -115,7 +121,7 @@ window.onload = () => {
         .then(response => {
             if(response.meta.msg == "OK" && response.meta.status == 200){
                 document.getElementById("loading").style.display = "none";
-                document.getElementById("uploaded").style.display = "block";
+                document.getElementById("uploaded").style.display = "flex";
 
                 if(localStorage.getItem("misGifs")){
                     //agregarlo al storage actual
@@ -128,6 +134,29 @@ window.onload = () => {
                     gifs.push(response.data.id);
                     localStorage.setItem("misGifs", JSON.stringify(gifs));
                 }
+
+                document.getElementById("btn-copiar").style.display = "flex";
+                document.getElementById("btn-copiar").addEventListener("click", e => {
+                    let aux = document.createElement("input");
+                    aux.setAttribute("value", `https://giphy.com/gifs/${response.data.id}`);
+                    document.body.appendChild(aux);
+                    aux.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(aux);
+                });
+                document.getElementById("btn-descargar").style.display = "flex";
+                document.getElementById("btn-descargar").addEventListener("click", e => {
+                    const url = `https://media0.giphy.com/media/${response.data.id}/giphy.gif?cid=d7aada5df75d06419f07e1f7704c5541038d923741b84029&rid=giphy.gif`
+                    fetch(url).then(res => res.blob())
+                    .then(response => {
+                        const link = document.createElement("a");
+                        link.href = window.URL.createObjectURL(new Blob([response]));
+                        link.setAttribute("download", "myGif.gif");
+                        document.body.appendChild(link);
+                        link.click();
+                        link.parentElement.removeChild(link);
+                    });
+                });
             }
         });
     });

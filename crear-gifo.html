@@ -63,19 +63,22 @@
               <br />
               (sólo necesitas una cámara para grabar un video)
             </p>
-            <div class="loading" id="loading" style="display: none">
-              <img src="assets/loader.svg" alt="Loading" />
-              <p class="p-loader">Estamos subiendo tu GIFO</p>
+            <div class="video">
+              <div class="loading" id="loading" style="display: none">
+                <img src="assets/loader.svg" alt="Loading" />
+                <p class="p-loader">Estamos subiendo tu GIFO</p>
+              </div>
+              <div class="uploaded" id="uploaded" style="display: none">
+                <img src="assets/check.svg" alt="Check" />
+                <p class="p-upload">GIFO subido con éxito</p>
+              </div>
+              <video id="ventana-video" style="height: 100%; width: 100%;"></video>
+              <img
+                id="ventana-gif"
+                style="display: none; height: 100%; width: auto;"
+              />
             </div>
-            <div class="uploaded" id="uploaded" style="display: none">
-              <img src="assets/check.svg" alt="Check" />
-              <p class="p-upload">GIFO subido con éxito</p>
-            </div>
-            <video id="ventana-video" style="height: 100%; width: 100%"></video>
-            <img
-              id="ventana-gif"
-              style="display: none; height: 100%; width: 100%"
-            />
+            
           </div>
         </div>
         <div class="camera-2">
@@ -113,6 +116,12 @@
           </div>
           <div class="btn-create" id="btn-subir" style="display: none">
             <a href="#">SUBIR GIFO</a>
+          </div>
+          <div class="btn-create" id="btn-copiar" style="display: none">
+            <a href="#">URL</a>
+          </div>
+          <div class="btn-create" id="btn-descargar" style="display: none">
+            <a href="#">DESCARGAR</a>
           </div>
         </div>
       </section>
