@@ -234,14 +234,12 @@
 //Card video
 //div video - useless?
 .video {
-  background-color: $violeta;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  video {
-    opacity: 50%;
-  }
+  width: auto;
+  height: 240px;  
 }
 .p-loader,
 .p-upload {
@@ -261,4 +259,7 @@
   position: relative;
   top: 50px;
   z-index: 500;
+}
+.salame{
+  opacity: 50%;
 }
