@@ -94,7 +94,7 @@ class GifElement {
 
     divContainer.appendChild(info);
 
-    gallery.appendChild(divContainer);
+    document.getElementById("gallery").appendChild(divContainer);
 
     document
       .getElementById(`${id}-fav`)

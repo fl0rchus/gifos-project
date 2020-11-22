@@ -116,6 +116,18 @@ window.onload = () => {
             if(response.meta.msg == "OK" && response.meta.status == 200){
                 document.getElementById("loading").style.display = "none";
                 document.getElementById("uploaded").style.display = "block";
+
+                if(localStorage.getItem("misGifs")){
+                    //agregarlo al storage actual
+                    let gifs = JSON.parse(localStorage.getItem("misGifs"));
+                    gifs.push(response.data.id);
+                    localStorage.setItem("misGifs", JSON.stringify(gifs));
+                }else{
+                    //Crear el storage de 0
+                    let gifs = [];
+                    gifs.push(response.data.id);
+                    localStorage.setItem("misGifs", JSON.stringify(gifs));
+                }
             }
         });
     });
