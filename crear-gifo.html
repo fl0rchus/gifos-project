@@ -22,7 +22,7 @@
   <body>
     <header>
       <a href="index.html">
-        <img src="assets/logo-desktop.svg" alt="Gifos" class="logo" />
+        <img src="assets/logo-desktop.svg" alt="Gifos" id="logo" />
       </a>
       <nav>
         <div class="menu">
@@ -72,13 +72,33 @@
                 <img src="assets/check.svg" alt="Check" />
                 <p class="p-upload">GIFO subido con éxito</p>
               </div>
-              <video id="ventana-video" style="height: 100%; width: 100%;"></video>
-              <img
-                id="ventana-gif"
-                style="display: none; height: 100%; width: auto;"
-              />
+              <video
+                id="ventana-video"
+                style="height: 100%; width: 100%"
+              ></video>
+              <div class="violet">
+                <div class="btnsGifos">
+                  <div
+                    class="buttonGifs btnCreate"
+                    id="btn-descargar"
+                    style="display: none"
+                  >
+                    <img src="assets/icon-download.svg" alt="Descargar" />
+                  </div>
+                  <div
+                    class="buttonGifs btnCreate"
+                    id="btn-copiar"
+                    style="display: none"
+                  >
+                    <img src="assets/icon-link.svg" alt="Link" />
+                  </div>
+                </div>
+                <img
+                  id="ventana-gif"
+                  style="display: none; height: 100%; width: auto"
+                />
+              </div>
             </div>
-            
           </div>
         </div>
         <div class="camera-2">
@@ -116,12 +136,6 @@
           </div>
           <div class="btn-create" id="btn-subir" style="display: none">
             <a href="#">SUBIR GIFO</a>
-          </div>
-          <div class="btn-create" id="btn-copiar" style="display: none">
-            <a href="#">URL</a>
-          </div>
-          <div class="btn-create" id="btn-descargar" style="display: none">
-            <a href="#">DESCARGAR</a>
           </div>
         </div>
       </section>

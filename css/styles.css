@@ -1178,6 +1178,17 @@ body.dark .title-gifos h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .vid-container__title {
@@ -1374,6 +1385,7 @@ body.dark .cam-svg-2 {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .loading,
@@ -1394,12 +1406,43 @@ body.dark .cam-svg-2 {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  top: 50px;
+  top: 150px;
   z-index: 500;
 }
 
 .salame {
   opacity: 50%;
+}
+
+.violet {
+  background-color: #572ee5;
+}
+
+.btnsGifos {
+  position: absolute;
+  left: 58%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 260px;
+}
+
+.btnCreate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+  z-index: 500;
+}
+
+.btnCreate:hover {
+  background: white;
 }
 
 @media all and (min-width: 375px) and (max-width: 480px) {

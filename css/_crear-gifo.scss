@@ -96,6 +96,10 @@
 .vid-container {
   grid-area: vid-container;
   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   // width: 480px;
   // height: 320px;
 }
@@ -239,7 +243,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 240px;  
+  height: 240px;
 }
 .p-loader,
 .p-upload {
@@ -247,6 +251,7 @@
   text-align: center;
   font-family: $montserrat;
   font-weight: bold;
+  margin-top: 5px;
 }
 .loading,
 .uploaded {
@@ -257,9 +262,28 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  top: 50px;
+  top: 150px;
   z-index: 500;
 }
-.salame{
+.salame {
   opacity: 50%;
+}
+.violet {
+  background-color: $violeta;
+}
+.btnsGifos {
+  position: absolute;
+  left: 58%;
+  display: flex;
+  top: 260px;
+}
+.btnCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  z-index: 500;
+}
+.btnCreate:hover {
+  background: rgba(255, 255, 255, 1);
 }
