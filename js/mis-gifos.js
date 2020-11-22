@@ -21,12 +21,10 @@ window.onload = () => {
 
       gifs.forEach((element) => {
         const urlGif = `https://api.giphy.com/v1/gifs/${element}?api_key=${apiKey}`;
-        console.log(element);
 
         fetch(urlGif)
           .then((res) => res.json())
           .then((response) => {
-            console.log(response);
             new GifElement(
               response.data.images.downsized.url,
               response.data.title,

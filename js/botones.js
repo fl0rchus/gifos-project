@@ -107,7 +107,7 @@ class GifElement {
         .then((response) => {
           const link = document.createElement("a");
           link.href = window.URL.createObjectURL(new Blob([response]));
-          link.setAttribute("download", `${title}.gif`);
+          link.setAttribute("download", title ? `${title}.gif` : "myGif.gif");
           document.body.appendChild(link);
           link.click();
           link.parentElement.removeChild(link);
