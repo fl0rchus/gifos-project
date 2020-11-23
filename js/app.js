@@ -6,10 +6,10 @@ const logo = document.querySelector(".logo");
 btnSwitch.addEventListener("click", () => {
   btnSwitch.textContent = "MODO DIURNO";
   document.body.classList.toggle("dark");
-  logo.src = "../assets/logo-desktop-modo-noc.svg";
+  logo.src = "assets/logo-desktop-modo-noc.svg";
 
   if (document.body.classList == "") {
-    logo.src = "../assets/logo-desktop.svg";
+    logo.src = "assets/logo-desktop.svg";
     btnSwitch.textContent = "MODO NOCTURNO";
   }
 });
