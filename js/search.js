@@ -96,7 +96,7 @@ function activeSearchBar() {
   //Llamada a la API para traer las sugerencias
   if (q.length >= 1) {
     fetch(
-      `https://api.giphy.com/v1/tags/related/${q}?api_key=${apiKey}&limit=4`
+      `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${q}&limit=4`
     )
       .then((response) => response.json())
       .then((data) => suggestions(data))
